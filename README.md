@@ -15,7 +15,7 @@ iOS アプリから Scentee デバイスを通して香りを噴霧させるた�
 
 `Target` > `Info` > `Custom iOS Target Properties` に次の1行を追加します。
 
-+   key :
++   Key :
     `ScenteeAppKey`
  
 +   Type :
