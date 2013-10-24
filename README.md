@@ -1,37 +1,37 @@
 ScenteeSDK for iOS
-===============
+==================
 
-iOS アプリから Scentee デバイスを通して香りを噴霧させるための SDK です。
- 
-使い方
-----------
+This SDK is for iOS application to emit a fragrant spray via Scentee device.
 
-### 開発者サイトへのアプリ登録 ###
+HOW TO USE IT
+-------------
 
-[Scentee 開発者サイト](http://developer.scentee.com/) から開発者登録を行います。  
-ログイン後、アプリ登録を行い **App Key** を取得します。
+### Register Applications To Scentee Developer Site ###
 
-### Xcode に App Key を登録 ###
+You need to register your Scentee developer account at http://developer.scentee.com/.  
+When logging in, you can get *App Key* as long as you register your application.
 
-`Target` > `Info` > `Custom iOS Target Properties` に次の1行を追加します。
+### Register App Key To Xcode###
+
+Add program to `Target` > `Info` > `Custom iOS Target Properties` as below.
 
 +   Key :
     `ScenteeAppKey`
- 
+
 +   Type :
     `String`
 
 +   Value :
-    App Key (例)  `000000100:ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+    App Key (ex)  `000000100:ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
-### ScenteeSDK.framework をインポート ###
+### Import ScenteeSDK.framework ###
 
-`Target` > `General` > `Linked frameworks and Libraries` > `+` > `Add Other...` から  
-ダウンロードした `ScenteeSDK.framework` を選択します。  
+Choose the `ScenteeSDK.framework` you downloaded from  
+`Target` > `General` > `Linked frameworks and Libraries` > `+` > `Add Other...` 
 
-`ScenteeSDK.framework` はファイルではなくディレクトリです。
- 
-### ScenteeSDK 初期化処理を記述 ###
+`ScenteeSDK.framework` is a directory, not a file.
+
+###How To Activation Of ScenteeSDK  ###
 
 **AppDelegate.h**
 
@@ -46,39 +46,39 @@ iOS アプリから Scentee デバイスを通して香りを噴霧させるた�
         return YES;
     }
 
-### 噴霧させる処理を記述 ###
+### How To Emit Fragrant Spray ###
 
     @try {
         [[ScenteeSDK scentee] puffAndFlashLedWithRed:127 Green:127 Blue:127 Special:0 Time:1000];
     }
     @catch (ScenteeException *exception) {
-        NSLog(@"噴霧失敗！");
+        NSLog(@"Failure！");
     }
- 
-リファレンス
--------------------
+
+Reference
+---------
 
     [[ScenteeSDK scentee] initialize];
 
-ScenteeSDK の初期化を行います。
+Activate ScenteeSDK 
 
 -----
 
     bool result = [[ScenteeSDK checkDeviceState];
 
-Scentee デバイスが正しく接続されているかどうかを取得します。
+It judges the condition of connection of Scentee device
 
 + `result` :
    + `true` :
-     正しく接続されている
+     Connected correct
    + `false` :
-     正しく接続されていない
+     Connected wrong
 
 -----
 
     int state = [[ScenteeSDK checkDetailedDeviceState]];
 
-Scentee デバイスの詳細な接続状態を取得します。
+It judges the condition of Scentee device in detail。
 
 + `state` :
    + `0` :
@@ -100,56 +100,56 @@ Scentee デバイスの詳細な接続状態を取得します。
 
     [[ScenteeSDK scentee] puffAndFlashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time];
 
-噴霧を行います。
+Emitting
 
 +   `red` :
-    Scentee デバイスの LED 色 (RGB 値の Red 0〜255)
+    LED Color of Scentee device (RGB  Red 0〜255)
 
 +   `blue` :
-    Scentee デバイスの LED 色 (RGB 値の Blue 0〜255)
+    LED Color of Scentee device  (RGB Blue 0〜255)
 
 +   `green` :
-    Scentee デバイスの LED 色 (RGB 値の Green 0〜255)
- 
+    LED Color of Scentee device  (RGB Green 0〜255)
+
 +   `special` :
    + `0` :
-     Scentee デバイスの LED 色を RGB 値で指定した色で点灯させる
+     Lighting Scentee device For The LED Color by RGB
    + `1` :
-     Scentee デバイスの LED 色を虹色に点灯させる
+     Lighting Scentee device For Rainbow
 
 +   `time` :
-    噴霧させる時間 (ミリ秒)
+  Term of emitting (millisecond)
 
 -----
 
     [[ScenteeSDK scentee] flashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time];
 
-噴霧を行わず、LED の点灯のみ行います。
+Only Lighting Without Emitting
 
 +   `red` :
-    Scentee デバイスの LED 色 (RGB 値の Red 0〜255)
+    LED Color of Scentee device (RGB  Red 0〜255)
 
 +   `blue` :
-    Scentee デバイスの LED 色 (RGB 値の Blue 0〜255)
+    LED Color of Scentee device  (RGB Blue 0〜255)
 
 +   `green` :
-    Scentee デバイスの LED 色 (RGB 値の Green 0〜255)
- 
+    LED Color of Scentee device  (RGB Green 0〜255)
+
 +   `special` :
    + `0` :
-     Scentee デバイスの LED 色を RGB 値で指定した色で点灯させる
+     Lighting Scentee device For The LED Color by RGB
    + `1` :
-     Scentee デバイスの LED 色を虹色に点灯させる
+     Lighting Scentee device For Rainbow
 
 +   `time` :
-    点灯させる時間 (ミリ秒)
+    Term of emitting (millisecond)
 
 -----
 
     TankId* tankId = [[ScenteeSDK scentee] getTankId];
 
-Scentee  デバイスのカートリッジ情報を取得します。
- 
+Get The Information of Scentee cartridge ID
+
 -------------------
 
 Copyright &copy; 2013 Scentee. All rights reserved.
