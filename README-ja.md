@@ -24,6 +24,12 @@ iOS アプリから Scentee デバイスを通して香りを噴霧させるた�
 +   Value :
     App Key (例)  `000000100:ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
+### Xcode で他に必要な設定 ###
+
+`Target` > `Linking` > `Other Linker Flags` > `+` で次の値を追加します。
+
+    -ObjC
+
 ### ScenteeSDK.framework をインポート ###
 
 `Target` > `General` > `Linked frameworks and Libraries` > `+` > `Add Other...` から  

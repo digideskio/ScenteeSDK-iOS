@@ -31,6 +31,13 @@ Choose the `ScenteeSDK.framework` you downloaded from
 
 `ScenteeSDK.framework` is a directory, not a file.
 
+### Other setting in Xcode ###
+
+Add following value at
+`Target` > `Linking` > `Other Linker Flags` > `+`
+
+    -ObjC
+
 ###How To Activation Of ScenteeSDK  ###
 
 **AppDelegate.h**
