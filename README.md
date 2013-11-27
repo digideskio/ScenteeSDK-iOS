@@ -71,7 +71,7 @@ Activate ScenteeSDK
 
 -----
 
-    bool result = [[ScenteeSDK checkDeviceState];
+    bool result = [[ScenteeSDK scentee] checkDeviceState];
 
 It judges the condition of connection of Scentee device
 
@@ -83,7 +83,7 @@ It judges the condition of connection of Scentee device
 
 -----
 
-    int state = [[ScenteeSDK checkDetailedDeviceState]];
+    int state = [[ScenteeSDK scentee] checkDetailedDeviceState]];
 
 It judges the condition of Scentee device in detail。
 
@@ -156,6 +156,12 @@ Only Lighting Without Emitting
     TankId* tankId = [[ScenteeSDK scentee] getTankId];
 
 Get The Information of Scentee cartridge ID
+
+-----
+
+    (unsigned int)echo:(unsigned int)number;
+
+Request echo to Scentee cartridge
 
 -------------------
 

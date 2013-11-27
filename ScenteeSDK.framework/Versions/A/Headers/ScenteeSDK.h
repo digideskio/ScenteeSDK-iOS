@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <AdSupport/AdSupport.h>
+#import "TankId.h"
 
 @interface ScenteeSDK : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate> {
     CLLocationManager *locationManager;
@@ -24,5 +25,7 @@
 - (unsigned int)checkDetailedDeviceState;
 - (void)puffAndFlashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time;
 - (void)flashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time;
+- (TankId*)getTankId;
+- (unsigned int)echo:(unsigned int)number;
 
 @end

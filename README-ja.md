@@ -70,7 +70,7 @@ ScenteeSDK の初期化を行います。
 
 -----
 
-    bool result = [[ScenteeSDK checkDeviceState];
+    bool result = [[ScenteeSDK scentee] checkDeviceState];
 
 Scentee デバイスが正しく接続されているかどうかを取得します。
 
@@ -82,7 +82,7 @@ Scentee デバイスが正しく接続されているかどうかを取得しま
 
 -----
 
-    int state = [[ScenteeSDK checkDetailedDeviceState]];
+    int state = [[ScenteeSDK scentee] checkDetailedDeviceState]];
 
 Scentee デバイスの詳細な接続状態を取得します。
 
@@ -155,6 +155,12 @@ Scentee デバイスの詳細な接続状態を取得します。
     TankId* tankId = [[ScenteeSDK scentee] getTankId];
 
 Scentee  デバイスのカートリッジ情報を取得します。
+
+-----
+
+    (unsigned int)echo:(unsigned int)number;
+
+Scentee デバイスへ echo 要求を行います。
  
 -------------------
 
