@@ -6,18 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <AdSupport/AdSupport.h>
 #import "TankId.h"
 
-@interface ScenteeSDK : NSObject <CLLocationManagerDelegate, UIAlertViewDelegate> {
-    CLLocationManager *locationManager;
-}
-
-@property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic) CLLocationDegrees longitude;
-@property (nonatomic) CLLocationDegrees latitude;
+@interface ScenteeSDK : NSObject <UIAlertViewDelegate>
 
 + (ScenteeSDK *)scentee;
 - (void)initialize;
