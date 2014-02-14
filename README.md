@@ -56,7 +56,7 @@ Add following value at
 ### How To Emit Fragrant Spray ###
 
     @try {
-        [[ScenteeSDK scentee] puffAndFlashLedWithRed:127 Green:127 Blue:127 Special:0 Time:1000];
+        [[ScenteeSDK scentee] puffAndFlashLedWithRed:127 Green:127 Blue:127 Special:0 Time:1000 Misc:@"Test"];
     }
     @catch (ScenteeException *exception) {
         NSLog(@"Failure！");
@@ -105,7 +105,7 @@ It judges the condition of Scentee device in detail。
 
 -----
 
-    [[ScenteeSDK scentee] puffAndFlashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time];
+    [[ScenteeSDK scentee] puffAndFlashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time Misc:(NSString*)misc];
 
 Emitting
 
@@ -126,6 +126,9 @@ Emitting
 
 +   `time` :
   Term of emitting (millisecond)
+
++   `misc` :
+  Append Data (40 characters)
 
 -----
 
@@ -162,6 +165,30 @@ Get The Information of Scentee cartridge ID
     (unsigned int)echo:(unsigned int)number;
 
 Request echo to Scentee cartridge
+
+-----
+
+    (DEPRECATED) [[ScenteeSDK scentee] puffAndFlashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time];
+
+Emitting (Deprecated. Call puffAndFlashLedWithRed:Green:Blue:Special:Time:Misc: instead)
+
++   `red` :
+    LED Color of Scentee device (RGB  Red 0〜255)
+
++   `blue` :
+    LED Color of Scentee device  (RGB Blue 0〜255)
+
++   `green` :
+    LED Color of Scentee device  (RGB Green 0〜255)
+
++   `special` :
+   + `0` :
+     Lighting Scentee device For The LED Color by RGB
+   + `1` :
+     Lighting Scentee device For Rainbow
+
++   `time` :
+  Term of emitting (millisecond)
 
 -------------------
 

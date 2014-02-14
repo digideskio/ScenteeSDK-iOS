@@ -21,4 +21,7 @@
 - (TankId*)getTankId;
 - (unsigned int)echo:(unsigned int)number;
 
+- (void)puffAndFlashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time Misc:(NSString*)misc;
+- (void)flashLedWithRed:(Byte)red Green:(Byte)green Blue:(Byte)blue Special:(Byte)special Time:(short int)time Misc:(NSString*)misc;
+
 @end
