@@ -38,11 +38,23 @@ Add following value at
 
     -ObjC
 
+Add following value at
+`Target` > `Architectures` > `Build Active Architecture Only` > `Debug`
+
+    No
+
+Delete arm64 at
+`Target` > `Architectures` > `Valid Architectures`
+
+    - armv7 armv7s arm64
+    + armv7 armv7s
+
 ###How To Activation Of ScenteeSDK  ###
 
 **AppDelegate.h**
 
     #import <ScenteeSDK/ScenteeSDK.h>
+    #import <ScenteeSDK/ScenteeException.h>
 
 **AppDelegate.m**
 

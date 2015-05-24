@@ -30,6 +30,15 @@ iOS アプリから Scentee デバイスを通して香りを噴霧させるた�
 
     -ObjC
 
+`Target` > `Architectures` > `Build Active Architecture Only` > `Debug` で次の値を追加します。
+
+    No
+
+`Target` > `Architectures` > `Valid Architectures` で arm64 を削除します。
+
+    - armv7 armv7s arm64
+    + armv7 armv7s
+
 ### ScenteeSDK.framework をインポート ###
 
 `Target` > `General` > `Linked frameworks and Libraries` > `+` > `Add Other...` から  
@@ -42,6 +51,7 @@ iOS アプリから Scentee デバイスを通して香りを噴霧させるた�
 **AppDelegate.h**
 
     #import <ScenteeSDK/ScenteeSDK.h>
+    #import <ScenteeSDK/ScenteeException.h>
 
 **AppDelegate.m**
 
